@@ -1,0 +1,205 @@
+* {
+    margin: 0%;
+    padding: 0%;
+}
+body {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 2rem;
+}
+
+/* MENU DE NAVEGACION */
+.navbar-brand {
+    font-weight: bold;
+    font-size: 3rem;
+}
+.bg-light {
+    background-image: linear-gradient(to right, rgb(58, 58, 189), rgb(196, 60, 60));
+}
+
+.form-control {
+    font-size: 2rem;
+}
+
+.btn {
+    font-size: 2rem;
+}
+
+/* MENU LIST */
+.menu_list {
+    background-image: linear-gradient(to right, rgb(58, 58, 189), rgb(196, 60, 60));
+}
+.menu_list--items {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    list-style: none;
+}
+
+.menu_list > a {
+    font-weight: bold;
+    font-size: 3rem;
+}
+a{
+    color:black;
+}
+
+a :hover {
+    color: black;
+    text-decoration: none;
+}
+/*TITLES */
+h1 {
+    margin-left: 30%;
+    font-weight: bold;
+}
+h2 {
+    margin: 5% 0% 5% 40%;
+    font-weight: bold;
+}
+/*LOGO DE LOS EQUIPOS*/
+.logoEquipos {
+    display: flex;
+    list-style: none;
+}
+.imgEquipos {
+    width: 80%;
+    height: 80%;
+}
+
+/* SECTION PROMO*/
+.promo {
+    background-image: url(imgFondo/fondoPromo.jpg);
+    background-repeat: no-repeat;
+    padding-bottom: 10%;
+    height: 20%;
+}
+.promoItem {
+    margin-left: 80%;
+    font-weight: bolder;
+}
+.promoBtn {
+    margin-left: 80%;
+}
+/*SECTION PERSONALIZADA */
+.personaliza {
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+.personaliza-item {
+    font-size: 2rem;
+    margin-left: 45%;   
+    font-weight: bolder;
+}
+.img-thumbnail {
+    border-style: none;
+}
+.btn_contactanos {
+    margin-left: 41%;
+    margin-top: 10%;
+}
+/*IMAGENES RECOMENDADAS*/
+.sectionRecomendados {
+    display: grid;
+    grid-template-columns: 40% 60%;
+}
+/* FOOTER */
+footer {
+    background: linear-gradient(to left, rgb(65, 65, 200), #C70039);
+}
+.piePagina {
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
+}
+.piePagina :hover {
+    color: white;
+}
+
+
+.piePagina-items >li {
+    list-style: none;
+    margin-left: 32%;
+
+}
+
+.piePagina-items> li > a {
+    text-decoration: none;
+    color: black;
+    list-style: none;
+    font-weight: bold;
+}
+.imgRedes {
+    margin-left: 40%;
+}
+
+p {
+    font-weight: bolder;
+    margin-left: 39%;
+    margin-top: 5%;
+    color: black;
+}
+.titleHelp {
+    margin-left: 45%;
+}
+
+.hijo {
+    display: grid;
+    grid-template-columns: 33.33% 33.33% 33.33%;
+}
+.hijo > div > a {
+    text-decoration: none;
+    color: white;
+}
+.hijo > div > a :hover {
+    color: black;
+}
+
+.breadcrumb {
+    background: white;
+}
+.breadcrumb-item {
+    color: black;
+}
+
+/*SECTION CONTACT*/
+
+.section_contact {
+    margin-left: 5%;
+}
+.titleSesion {
+    margin-left: 1%;
+}
+.areaText {
+    width: 60%;
+}
+.btnEnviarForm {
+    margin-bottom: 5%;
+    margin-left: 47%;
+}
+
+/*MEDIA QUERIES*/
+
+@media (min-width: 1024px) {
+    h1 {
+        margin-left: 37%;
+        margin-bottom: 3%;
+    }
+    .promoItem {
+        margin-left: 60%;
+    }
+    .promoBtn {
+        margin-left: 60%;
+        margin-top: 3%;
+    }
+    .sectionRecomendados {
+        margin-left: 10%;
+        display: flex;
+    }
+    .btn_carrito {
+        margin-left: 38%;
+    }
+    .btnEnviarForm {
+        margin-left: 53%;
+    }
+
+
+}
