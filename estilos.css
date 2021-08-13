@@ -4,7 +4,7 @@
 }
 body {
     font-family: 'Barlow Condensed', sans-serif;
-    font-size: 2rem;
+    font-size: 1.5rem;
 }
 
 /* MENU DE NAVEGACION */
@@ -33,20 +33,22 @@ body {
     align-items: center;
     justify-content: space-around;
     list-style: none;
+    font-weight: bolder;
 }
 
 .menu_list > a {
     font-weight: bold;
     font-size: 3rem;
 }
+.menu_list :hover{
+    color:white;
+    text-decoration: none;
+}
 a{
     color:black;
 }
 
-a :hover {
-    color: black;
-    text-decoration: none;
-}
+
 /*TITLES */
 h1 {
     margin-left: 30%;
@@ -113,14 +115,10 @@ footer {
 .piePagina :hover {
     color: white;
 }
-
-
 .piePagina-items >li {
     list-style: none;
     margin-left: 32%;
-
 }
-
 .piePagina-items> li > a {
     text-decoration: none;
     color: black;
@@ -137,6 +135,7 @@ p {
     margin-top: 5%;
     color: black;
 }
+
 .titleHelp {
     margin-left: 45%;
 }
@@ -169,11 +168,14 @@ p {
     margin-left: 1%;
 }
 .areaText {
-    width: 60%;
+    width: 100%;
+    height: 50%;
 }
-.btnEnviarForm {
-    margin-bottom: 5%;
-    margin-left: 47%;
+.carritoCompra {
+    width: 4%;
+}
+#carrito > p {
+    margin-left: 5%;
 }
 
 /*MEDIA QUERIES*/
@@ -197,9 +199,122 @@ p {
     .btn_carrito {
         margin-left: 38%;
     }
-    .btnEnviarForm {
-        margin-left: 53%;
+    #productoCamiseta {
+        margin-left: 5%;  
     }
+    .precioInner {
+        margin-left: 40%;
+    }
+    .btnInner {
+        align-items: flex-start;
+        margin-bottom: 50%;
+    }
+    .imgInner {
+        width: 60%;
+        height: 60%;
+    }
+    input {
+        width: 60%;
+    }
+    .areaText {
+        width: 60%;
+    }
+    .carritoCompra {
+        width: 3%;
+    }
+    .btn-delete {
+        height: 20%;
+    }
+    #productoSaleCamiseta{ 
+        margin-left: 5%;
+    }
+    #btnEnviarForm{
+        margin: 3% 0% 3% 53%;
+    }
+}
+
+/*ESTILOS INNER HTML*/
+.info {
+    margin-left: 5%;
+}
+
+.imgInner {
+    margin-left: 20%;
+}
+#formContacto{
+    display: flex;
+    flex-direction: column;
+}
+input {
+    margin-bottom: 3%;
+}
 
 
+.card-text {
+    margin-left: 0%;
+}
+.card {
+    border-color:transparent;
+}
+.camisetaSeleccionada {
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
+}
+.btn-delete {
+    height: 40%;
+}
+#pageFont {
+    font-weight: bolder;
+    color: black;
+}
+/*REGISTRATE*/
+.infoPersonal {
+    width: 70%;
+    margin-left: 10%;
+}
+.infoIniciar {
+    width: 70%;
+}
+.btn_crearCuenta {
+    margin-bottom: 5%;
+}
+.imgEquipo {
+    margin-left: 2%;
+}
+/*SECTION INICIAR SESION*/
+.titleSesion {
+    font-weight: 900;
+    text-align: left;
+    margin-left: 5%;
+}
+.ingresaForm {
+    width: 70%;
+    height: 70%;
+    margin-left: 5%;
+    margin-bottom: 5%;
+}
+.btnIniciar {
+    margin-left: 77%;
+}
+.form-label {
+    font-weight: bold;
+}
+.ingresaOregistarte {
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+.titleRegistrados {
+    font-size: 1.5rem;
+    text-align: left;
+    margin-left: 10%;
+}
+.titleNuevos {
+    font-size: 1.5rem;
+    margin-top: 17.8%;
+}
+.enterate {
+    margin-left: 0%;
+}
+#btn_crearCuenta {
+    margin-bottom: 5%;
 }

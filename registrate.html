@@ -17,18 +17,19 @@
     <!--ESTILOS CSS-->
     <link rel="stylesheet" href="estilos.css">
 
-    <title>CLASSIC NBA/CONTACT</title>
+    <title>CLASSIC NBA/REGISTRATE</title>
 </head>
 <body>
     <!--MENU DE NAVEGACION-->
     <header>
         <nav class="navbar navbar-light bg-light">
-            <a href="index.html" class="navbar-brand">CLASSIC NBA</a>
+            <a class="navbar-brand">CLASSIC NBA</a>
             <form class="form-inline">
                 <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
                 <button class="btn btn-dark" type="submit">Buscar</button>
             </form>
         </nav>
+        <!--LISTA DE MENU-->
         <div class="menu_list">
             <ul class="menu_list--items">
                 <a href="index.html"><li>HOME</li></a>
@@ -42,23 +43,29 @@
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="index.html">CLASSIC NBA</a></li>
-            <li id="pageFont" class="breadcrumb-item active" aria-current="page">CONTACTO</li>
+            <li id="pageFont" class="breadcrumb-item active" aria-current="page">REGISTRATE</li>
         </ol>
     </nav>
-    <!--CUERPO-->
-    <div class="section_contact">
-        <h1 class="titleSesion">CONTACTANOS</h1>
-        <form id="formContacto">
-            <input name="nombre" id="nombre" type="text" placeholder="Nombre">
-            <input name="apellido" id="apellido" type="text" placeholder="Apellido">
-            <input name="telefono" id="tel" type="number" placeholder="Teléfono">
-            <input name="email" id="email" type="text" placeholder="Email">
-            <textarea name="comentario" class="areaText">Escribe aquí tu comentario</textarea>
-            <div id="btnEnviarForm">
-                <button type="submit" class="btn btn-outline-dark">Enviar</button>
+        <!--CUERPO-->
+        <div class="imgEquipo">
+            <img src="imgFondo/equipoText.png" class="img-fluid" alt="equipo de basketball">
+        </div>
+        <div class="ingresaOregistarte">
+            <div>
+                <h1 class="titleSesion">NUEVA CUENTA</h1>
+                <h2 class="titleRegistrados">INFORMACION PERSONAL</h2>
+                <form class="infoPersonal">
+                    <div class="mb-3">
+                        <input name="nombre" id="nombre" type="text" placeholder="Nombre">
+                        <input name="apellido" id="apellido" type="text" placeholder="Apellido">
+                        <input name="email" id="email" type="email" placeholder="Email">
+                        <input name="password" id="password" type="password" placeholder="Contraseña">
+                        <input name="password" id="password" type="password" placeholder="Confirmar contraseña">
+                        <button type="submit" class="btn btn-outline-dark">Registrarse</button>
+                    </div>
+                </form>
             </div>
-        </form>
-    </div>
+        </div>
     <!--PIE DE PAGINA-->
     <footer>
         <div class="piePagina">
@@ -112,10 +119,9 @@
     </footer>
     <!--BOOTSTRAP-->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
-    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>  
     <!--JAVASCRIPT-->
     <script src="js/contacto.js"></script>
-    <script src="js/formulario.js"></script>
+    <script src="js/registrarse.js"></script>
 </body>
 </html>
