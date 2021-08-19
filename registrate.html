@@ -33,9 +33,9 @@
         <div class="menu_list">
             <ul class="menu_list--items">
                 <a href="index.html"><li>HOME</li></a>
-                <a href="classic.html"><li>CLASSIC</li></a>
-                <a href="sale.html"><li>SALE</li></a>
-                <a href="contact.html"><li>CONTACT</li></a>
+                <a href="productos.html"><li>PRODUCTOS</li></a>
+                <a href="ofertas.html"><li>OFERTAS</li></a>
+                <a href="contacto.html"><li>CONTACTO</li></a>
             </ul>
         </div>
     </header>
@@ -56,12 +56,32 @@
                 <h2 class="titleRegistrados">INFORMACION PERSONAL</h2>
                 <form class="infoPersonal">
                     <div class="mb-3">
-                        <input name="nombre" id="nombre" type="text" placeholder="Nombre">
-                        <input name="apellido" id="apellido" type="text" placeholder="Apellido">
-                        <input name="email" id="email" type="email" placeholder="Email">
-                        <input name="password" id="password" type="password" placeholder="Contraseña">
-                        <input name="password" id="password" type="password" placeholder="Confirmar contraseña">
-                        <button type="submit" class="btn btn-outline-dark">Registrarse</button>
+                        <label for="name" class="form-label">Nombre</label>
+                        <input type="name" class="form-control" id="exampleInputName1" aria-describedby="emailHelp">
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputAdress1" class="form-label">Apellido</label>
+                        <input type="adress" class="form-control" id="exampleInputAdress1">
+                    </div>
+                </form>
+            </div>
+            <div>
+                <h3 class="titleNuevos">INFORMACION PARA INICIAR SESION</h3>
+                <form class="infoIniciar">
+                    <div class="mb-3">
+                        <label for="exampleInputEmail1" class="form-label">Correo Electrónico</label>
+                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputPassword1" class="form-label">Contraseña</label>
+                        <input type="password" class="form-control" id="exampleInputPassword1">
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputPassword1" class="form-label">Confirmar contraseña</label>
+                        <input type="password" class="form-control" id="exampleInputPassword1">
+                    </div>
+                    <div id="btn_crearCuenta">
+                        <button type="submit" class="btn btn-outline-dark">Crear cuenta</button>
                     </div>
                 </form>
             </div>
@@ -81,9 +101,9 @@
                 <ul class="piePagina-items">
                     <li><a href="#">Tabla de talles</a></li>
                     <li><a href="#">Cómo comprar</a></li>
-                    <li><a href="#">Envios</a></li>
+                    <li><a href="envios.html">Envios</a></li>
                     <li><a href="#">Políticas de cambio</a></li>
-                    <li><a href="#">Preguntas frecuentes</a></li>
+                    <li><a href="preguntasFrecuentes.html">Preguntas frecuentes</a></li>
                 </ul>
             </div>
             <div>
@@ -112,7 +132,7 @@
                         <a href="#"><p>Pagos y envíos</p></a>
                     </div>
                     <div>
-                        <a href="#"><p>Preguntas frecuentes</p></a>
+                        <a href="preguntasFrecuentes.html"><p>Preguntas frecuentes</p></a>
                     </div>
                 </div>
         </section>

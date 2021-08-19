@@ -111,8 +111,9 @@ footer {
 .piePagina {
     display: grid;
     grid-template-columns: 25% 25% 25% 25%;
+    color: black;
 }
-.piePagina :hover {
+.piePagina-items >li :hover {
     color: white;
 }
 .piePagina-items >li {
@@ -136,6 +137,7 @@ p {
     color: black;
 }
 
+
 .titleHelp {
     margin-left: 45%;
 }
@@ -149,7 +151,7 @@ p {
     color: white;
 }
 .hijo > div > a :hover {
-    color: black;
+    color: white;
 }
 
 .breadcrumb {
@@ -162,7 +164,7 @@ p {
 /*SECTION CONTACT*/
 
 .section_contact {
-    margin-left: 5%;
+    margin-left: 30%;
 }
 .titleSesion {
     margin-left: 1%;
@@ -177,13 +179,54 @@ p {
 #carrito > p {
     margin-left: 5%;
 }
-
+.clickAqui {
+    color: blue;
+    text-decoration: blue;
+}
+ol {
+    margin-left: 3%;
+}
+#respuestaPreguntas {
+    margin-left: 0%;
+    margin-top: 0%;
+}
+.itemsTitle {
+    color: crimson;
+    font-weight: bolder;
+}
+.jumbotron {
+    width: 90%;
+}
+.preguntaUno {
+    display: flex;
+}
+.preguntaDos {
+    display: flex;
+}
+.preguntaTres {
+    display: flex;
+}
+.envioUno {
+    display: flex;
+}
+.envioDos {
+    display: flex;
+}
+.envioTres {
+    display: flex;
+}
+.envioCuatro {
+    display: flex;
+}
 /*MEDIA QUERIES*/
 
 @media (min-width: 1024px) {
     h1 {
         margin-left: 37%;
         margin-bottom: 3%;
+    }
+    .titleLeft{
+        margin-left: 3%;
     }
     .promoItem {
         margin-left: 60%;
@@ -229,7 +272,56 @@ p {
         margin-left: 5%;
     }
     #btnEnviarForm{
-        margin: 3% 0% 3% 53%;
+        margin: 3% 0% 3% 50%;
+    }
+    .btn-registrarse {
+        margin-left: 30%;
+        margin-bottom: 5%;
+    }
+    .alignEnvios {
+        margin-left: 0%;
+        margin-top: 0%;
+    }
+    .equiposSelect {
+        margin-left: 3%;
+        margin-bottom: 3%;
+    }
+    .filtroPrecio {
+        margin-top: 2%;
+        height: 5%;
+    }
+    .filtroPrecio > h3 {
+        font-size: 1.5rem;
+    }
+    .gridFiltro {
+        display: grid;
+        grid-template-columns: 20% 80%;
+    }
+    .sectionSale {
+        background-image: url(imgFondo/sectionSale.png) ;
+    }
+    .sectionSale > h2 {
+        font-weight: 900;
+        font-size: 5rem;
+        margin-bottom: 5%;
+    }
+    .btn-oferta {
+        margin-left: 41%;
+        margin-bottom: 5%;
+    }
+    .titleOferta {
+        margin-top: 5%;
+    } 
+    .textNoEncontrado{
+        margin-left: 0%;
+        margin-top: 0%;
+    }
+    .text-productoDisponible {
+        margin-left: 0%;
+        margin-bottom: 5%;
+    }
+    .anchoPrecio {
+        width: 40%;
     }
 }
 

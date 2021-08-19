@@ -11,39 +11,96 @@ $(document).ready(function () {
     for (const boton of botonesSale) {
     boton.onclick = comprarSaleCamiseta;
     }
-
     //OBTENER INFO EN STORAGE
     if("CARRITO" in localStorage) {
         const datosGuardados = JSON.parse(localStorage.getItem("CARRITO"));
         for (const literal of datosGuardados) {
-            carrito.push(new Camiseta(literal.id, literal.modelo, literal.nombre,literal.precio));
+            carrito.push(new Camiseta(literal.img, literal.equipo, literal.nombre, literal.modelo, literal.precio, literal.cantidad,literal.id));
         }
         //SALIDA
         carritoUI(carrito);
     }
+    
     $(".dropdown-menu").click(function(e) {
         e.stopPropagation();
     });
+
+    //PETICIONES JQUERY
+    const URLGET = "data/productos.json";
+    $.get(URLGET, function (datos, estado) {
+        if(estado == "success") {
+            for (const literal of datos) {
+                camisetas.push(new Camiseta(literal.img, literal.equipo, literal.nombre, literal.modelo, literal.precio, literal.cantidad,literal.id));
+            }
+        }
+        console.log(camisetas);
+                
+        //GENERO INTERFAZ DE CAMISETAS
+        camisetaJquery(camisetas, '#productoCamiseta');
+    });
+
+    const URLGET2 = "data/ofertas.json";
+    $.get(URLGET2, function (datos, estado) {
+        if(estado == "success") {
+            for (const literal of datos) {
+                saleCamisetas.push(new Camiseta(literal.img, literal.equipo, literal.nombre, literal.modelo, literal.precio, literal.cantidad,literal.id));
+            }
+        }
+        //GENERO INTERFAZ DE CAMISETAS
+        camisetaJquery(saleCamisetas, '#productoSaleCamiseta');
+    });
 });
+//METODO LOAD
 window.addEventListener("load", ()=> {
     $("#indicadorCarga").remove();
+    //ANIMACION
+    $("#productoCamiseta").fadeIn("slow");
+    $("#productoSaleCamiseta").fadeIn("slow");
+    
 });
-//INSTANCIAR OBJETOS Y ASOCIAR AL ARRAY GLOBAL
-camisetas.push(new Camiseta('imgCamisetas/atlanta11.jpg', "Youth Atlanta", "Hawks Trae Young", "Nike Red 2019/20 Swingman Jersey", 1.888, 1));
-camisetas.push(new Camiseta('imgCamisetas/celticsBird.webp', "Boston Celtics", "Larry Bird Mitchell & Ness Kelly", "Green Hardwood Classics", 1.999, 2));
-camisetas.push(new Camiseta('imgCamisetas/bulls24.jpg', "Youth Chicago Bulls", "Lauri Markkanen", "Nike Red Swingman Jersey - Icon Edition", 1.788, 3)); 
-camisetas.push(new Camiseta('imgCamisetas/lakers23.webp', "Los Angeles Lakers", "LeBron James", "Nike Gold 2020/21 Swingman Jersey", 1.999, 4));
-camisetas.push(new Camiseta('imgCamisetas/lakersNegra.webp', "Los Angeles Lakers", "LeBron James", "Nike Black City Edition Swingman Jersey", 2.333, 5));
-camisetas.push(new Camiseta('imgCamisetas/milwaukeeAllen.webp',"Milwaukee Bucks", "Allen Mitchell", "Black Hardwood Classics Swingman Jersey", 2.899, 6));
+//GENERAR SELECT
+selectProducto(equipos, "#filtroEquipos");
+//CHANGE PRODUCTOS
+$("#filtroEquipos").change(function (e) { 
+    e.preventDefault();
+    const value = this.value;
+    $("#productoCamiseta").fadeOut(600,function () {
+        if(value == "Todos") {
+            camisetaJquery(camisetas, '#productoCamiseta');
+        }
+        else if(value =='Miami' || value =='Memphis') {
+            $("#filtroNoEncontrado").empty();
+            $("#filtroNoEncontrado").append(`<p class="textNoEncontrado">No se han encontrado resultados para la búsqueda<p><hr><p class="text-productoDisponible">Productos disponibles:</p>`);
+        }
+        
+        else {
+            $("#filtroNoEncontrado").remove();
+            const filtrados = camisetas.filter(p => p.equipo == value);
+            camisetaJquery(filtrados, '#productoCamiseta');
+        }
+    }).fadeIn(600);
+});
 
 
-saleCamisetas.push(new Camiseta('imgCamisetas/memphisSale.webp', "Memphis", "Morat", "Nike Blue Team Swingman Jersey", 1.433, 7 ));
-saleCamisetas.push(new Camiseta('imgCamisetas/miamiSale.webp', "Miami", "Jimmy Butler", "Nike Black Swingman Jersey", 1.255, 8 ));
-saleCamisetas.push(new Camiseta('imgCamisetas/pippenSale.webp', "Chicago Bulls", "Pippen Mitchell", "White 1995-96 Hardwood Classics Reload Swingman Jersey", 1.255, 9 ));
-saleCamisetas.push(new Camiseta('imgCamisetas/celticsSale.webp', "Celtics", "Larry Bird Mitchell", "Green Hardwood Classics Wildlife Swingman Jersey", 1.111, 10 ));
-saleCamisetas.push(new Camiseta('imgCamisetas/atlantaSale.webp', "Atlanta", "Your name", "Nike Black Swingman Custom Jersey", 1.222, 11 ));
-saleCamisetas.push(new Camiseta('imgCamisetas/milwaukeeSale.webp', "Milwaukee Bucks", "Your name", "Nike Black Swingman Jersey", 1.111, 12 ));
-console.log(saleCamisetas);
-//GENERO INTERFAZ DE CAMISETAS
-camisetaJquery(camisetas, '#productoCamiseta');
-camisetaJquery(saleCamisetas, '#productoSaleCamiseta');
+//EVENTO SOBRE INPUT DE BUSQUEDA PRODUCTOS
+$("#busquedaProducto").keydown(function (e) { 
+    const criterio = this.value;
+    if(criterio != "") {
+        const productoEncontrado = camisetas.filter(p => p.nombre.includes(criterio)||  p.modelo.includes(criterio) ||  p.equipo.includes(criterio));
+        console.log(productoEncontrado);
+        camisetaJquery(productoEncontrado,'#productoCamiseta');
+    }
+});
+
+//DEFINIR EVENTOS SOBRE INPUT DE PRECIOS
+$(".inputPrecio").change(function (e) { 
+    console.log(this.value);
+    const min = $("#minProducto").val();
+    const max = $("#maxProducto").val();
+    if((min > 0) && (max >0)) {
+        const precioEncontrado = camisetas.filter(p => p.precio >= min && p.precio <= max);
+        console.log(precioEncontrado);
+        camisetaJquery(precioEncontrado,'#productoCamiseta');
+    }
+    
+});

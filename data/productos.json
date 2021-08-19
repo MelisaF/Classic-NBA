@@ -1,0 +1,7 @@
+[{"img": "imgCamisetas/atlanta11.jpg", "equipo": "Atlanta", "nombre": "Hawks Trae Young", "modelo":"Nike Red 2019/20 Swingman Jersey", "precio": 1888, "cantidad":10, "id":1},
+{"img":"imgCamisetas/celticsBird.webp", "equipo":"Celtics", "nombre":"Larry Bird Mitchell & Ness Kelly","modelo": "Green Hardwood Classics","precio": 1999, "cantidad":10,"id":2},
+{"img": "imgCamisetas/bulls24.jpg", "equipo":"Chicago Bulls", "nomrbe":"Lauri Markkanen", "modelo":"Nike Red Swingman Jersey - Icon Edition","precio": 1788,"cantidad":10, "id":3},
+{"img":"imgCamisetas/lakers23.webp", "equipos":"Lakers", "nombre":"LeBron James", "modelo":"Nike Gold 2020/21 Swingman Jersey", "precio":1999, "cantidad":10, "id": 4},
+{"img":"imgCamisetas/lakersNegra.webp","equipo": "Lakers", "nombre":"LeBron James", "modelo":"Nike Black City Edition Swingman Jersey", "precio":2333,"cantidad":10,"id": 5},
+{"img":"imgCamisetas/milwaukeeAllen.webp","equipo":"Milwaukee Bucks", "nombre":"Allen Mitchell", "modelo":"Black Hardwood Classics Swingman Jersey", "precio":2899, "cantidad":10, "id": 6}]
+
