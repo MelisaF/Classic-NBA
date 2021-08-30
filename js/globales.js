@@ -2,8 +2,8 @@ const camisetas = [];
 
 const saleCamisetas = [];
 
-let carrito = [];
+const carrito = [];
 
-const equipos = ['Atlanta', 'Lakers', 'Chicago Bulls', 'Celtics', 'Milwaukee Bucks', 'Miami', 'Memphis'];
+const equipos = ['ATLANTA', 'LAKERS', 'CHICAGO BULLS', 'CELTICS', 'MILWAUKEE BUCKS', 'MIAMI', 'MEMPHIS'];
 
-const equipoNoEncontrado = ['Miami', 'Memphis'];
+const equipoNoEncontrado = ['MIAMI', 'MEMPHIS'];

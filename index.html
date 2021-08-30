@@ -12,8 +12,11 @@
     <!--FONTS-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@100&display=swap" rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@200&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+    
     <!--ESTILOS CSS-->
     <link rel="stylesheet" href="estilos.css">
     <title>CLASSIC NBA/HOME</title>
@@ -21,224 +24,122 @@
 <body>
     <!--MENU DE NAVEGACION-->
     <header>
-        <nav class="navbar navbar-light bg-light">
-            <a class="navbar-brand">CLASSIC NBA</a>
-            <form class="form-inline">
-                <input id="busquedaInicial" class="form-control mr-sm-2" type="search" placeholder="Buscar" aria-label="Search">
-                <button class="btn btn-dark" type="submit">Ir</button>
-            </form>
-        </nav>
-        <!--LISTA DE MENU-->
-        <div class="menu_list">
-            <ul class="menu_list--items">
-                <a href="index.html"><li>HOME</li></a>
-                <a href="productos.html"><li>PRODUCTOS</li></a>
-                <a href="ofertas.html"><li>OFERTAS</li></a>
-                <a href="contacto.html"><li>CONTACTO</li></a>
+        <p class="navText">ENVIO GRATIS DESDE $5000</p>
+    </header>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand fontTitle" href="index.html">Classic NBA</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-link" href="index.html">HOME <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="productos.html">PRODUCTOS</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="ofertas.html">OFERTAS</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="contacto.html">CONTACTO</a>
+                </li>
             </ul>
         </div>
-    </header>
+        <form>
+            <div class="flex-icon">
+                <div>
+                    <input class="lupaBusca" type="text" id="header-search" placeholder="Buscar" name="s" autocomplete="off">
+                    <img src="imgRedes/lupa.png" class="imgLupa">
+                </div>
+                <div class="imgUsuario">
+                    <a href="registrate.html"><img src="imgRedes/usuario.png" ></a>
+                </div>
+            </div>
+        </form>
+    </nav>
     <section>
+        <!--IMG RESPONSIVE-->
+        <img src="imgFondo/imgResponsive.png" class="img-fluid" alt="imagen principal de la pagina, jugadores de baskets">
+        <hr>
+        <!--POSITION FIXED-->
+        <a href="https://api.whatsapp.com/send?phone=5491158019005"><img src="imgRedes/whatsapp.png"  class="logoWhats" alt="logo whatsapp"></a>
         <!--GENERO INNER HTML-->
-        <h1 id="titleOferta">APROVECHA LAS OFERTAS</h1>
+        <section>
+            <div class="personaliza">
+                <div>
+                    <div>
+                        <p class="personaliza-item">CAMISETAS </p>
+                        <p class="personaliza-item2">PERSONALIZADAS</p>   
+                    </div>
+                    <div class="btn_contactanos">
+                        <a href="contacto.html"><button type="button" class="btn btn-outline-dark">CONTACTANOS</button></a>
+                    </div>
+                    </div>
+                <div>
+                    <img src="imgFondo/personalizaImg.png" class="img-thumbnail" alt="jugador Kobe">
+                </div>
+            </div>
+        </section>
         <div class="sectionSale">
-            <h2>15% OFF</h2>
-            <a href="ofertas.html"><button class="btn btn-dark btn-oferta" type="submit">Hace click aquí</button></a>
+            <a href="ofertas.html"><button class="btn btn-dark btn-oferta" type="submit">DESCUENTOS INCREIBLES</button></a>
         </div>
     </section>
     <hr>
-    <!--LOGO EQUIPOS-->
-    <section>
-        <h1>SELECCIONA TU EQUIPO</h1>
-        <div>
-            <ul class="logoEquipos">
-                <li>
-                    <a href="#"><img src="imgLogos/atlantaLogo.svg" alt="Logo Atlanta" class="imgEquipos"></a>
-                </li>
-                <li>
-                    <a href="#"><img src="imgLogos/celticsLogo.svg" alt="Logo Celtics" class="imgEquipos"></a>
-                </li>
-                <li>
-                    <a href="#"><img src="imgLogos/brooklynLogo.svg" alt="Logo Brooklyn" class="imgEquipos"></a>
-                </li>
-                <li>
-                    <a href="#"><img src="imgLogos/charlotteLogo.svg" alt="Logo Charlotte" class="imgEquipos"></a>
-                </li>
-                <li>
-                    <a href="#"><img src="imgLogos/chicagoLogo.svg" alt="Logo Chicago" class="imgEquipos"></a>
-                </li>
-                <li>
-                    <a href="#"><img src="imgLogos/clevelandLogo.svg" alt="Logo Cleveland" class="imgEquipos"></a>
-                </li>
-                <li>
-                    <a href="#"><img src="imgLogos/pistonsLogo.svg" alt="Logo Pistons" class="imgEquipos"></a>
-                </li>
-                <li>
-                    <a href="#"><img src="imgLogos/indianaLogo.svg" alt="Logo Inidiana" class="imgEquipos"></a>
-                </li>
-                <li>
-                    <a href="#"><img src="imgLogos/MiamiLogo.svg" alt="Logo Miami" class="imgEquipos"></a>
-                </li>
-                <li>
-                    <a href="#"><img src="imgLogos/MilwaukeeLogo.svg" alt="Logo Milwaukee" class="imgEquipos"></a>
-                </li>
-                <li>
-                    <a href="#"><img src="imgLogos/newYorkLogo.svg" alt="Logo New York" class="imgEquipos"></a>
-                </li>
-                <li>
-                    <a href="#"><img src="imgLogos/magicLogo.svg" alt="Logo Magic" class="imgEquipos"></a>
-                </li>
-                <li>
-                    <a href="#"><img src="imgLogos/philadelphiaLogo.svg" alt="Logo Philadelphia" class="imgEquipos"></a>
-                </li>
-                <li>
-                    <a href="#"><img src="imgLogos/raptorsLogo.svg" alt="Logo Raptors" class="imgEquipos"></a>
-                </li>
-                <li>
-                    <a href="#"><img src="imgLogos/wizardsLogo.svg" alt="Logo Wizards" class="imgEquipos"></a>
-                </li>   
-            </ul>
-        </div>
-        <div>
-            <ul class="logoEquipos">
-                <li>
-                    <a href="#"><img src="imgLogos/dallasLogo.svg" alt="Logo Dallas" class="imgEquipos"></a>
-                </li>
-                <li>
-                    <a href="#"><img src="imgLogos/denverLogo.svg" alt="Logo Denver" class="imgEquipos"></a>
-                </li>
-                <li>
-                    <a href="#"><img src="imgLogos/warriorsLogo.svg" alt="Logo Warriors" class="imgEquipos"></a>
-                </li>
-                <li>
-                    <a href="#"><img src="imgLogos/houstonLogo.svg" alt="Logo Houston" class="imgEquipos"></a>
-                </li>
-                <li>
-                    <a href="#"><img src="imgLogos/losAngelesLogo.svg" alt="Logo Los Angeles" class="imgEquipos"></a>
-                </li>
-                <li>
-                    <a href="#"><img src="imgLogos/lakersLogo.svg" alt="Logo Lakers" class="imgEquipos"></a>
-                </li>
-                <li>
-                    <a href="#"><img src="imgLogos/memphisLogo.svg" alt="Logo Memphis" class="imgEquipos"></a>
-                </li>
-                <li>
-                    <a href="#"><img src="imgLogos/timberwolvesLogo.svg" alt="Logo Timberwolves" class="imgEquipos"></a>
-                </li>
-                <li>
-                    <a href="#"><img src="imgLogos/newOrleansLogo.svg" alt="Logo New Orleans" class="imgEquipos"></a>
-                </li>
-                <li>
-                    <a href="#"><img src="imgLogos/oklahomaLogo.svg" alt="Logo Oklahoma" class="imgEquipos"></a>
-                </li>
-                <li>
-                    <a href="#"><img src="imgLogos/sunsLogo.svg" alt="Logo Suns" class="imgEquipos"></a>
-                </li>
-                <li>
-                    <a href="#"><img src="imgLogos/portlandLogo.svg" alt="Logo Portland" class="imgEquipos"></a>
-                </li>
-                <li>
-                    <a href="#"><img src="imgLogos/kingsLogo.svg" alt="Logo Kings" class="imgEquipos"></a>
-                </li>
-                <li>
-                    <a href="#"><img src="imgLogos/spursLogo.svg" alt="Logo Spurs" class="imgEquipos"></a>
-                </li>
-                <li>
-                    <a href="#"><img src="imgLogos/jazzLogo.svg" alt="Logo Jazz" class="imgEquipos"></a>
-                </li>   
-            </ul>
-        </div>
-    </section>
     <section>
         <div class="promo">
             <div >
                 <p class="promoItem">REGISTRATE</p>
             </div>
             <div>
-                <p class="promoItem">PARA PROMOCIONES y DESCUENTOS</p>
+                <p class="promoItem2">PARA PROMOCIONES y DESCUENTOS</p>
             </div>
             <div class="promoBtn">
                 <a href="registrate.html"><button type="button" class="btn btn-outline-dark">UNITE AHORA</button></a>
             </div>
         </div> 
     </section>
-    <section>
-        <div class="personaliza">
-            <div>
-                <div>
-                    <p class="personaliza-item">PERSONALIZA</p>
-                </div>
-                <div>
-                    <p class="personaliza-item">TU CAMISETA</p>   
-                </div>
-                <div class="btn_contactanos">
-                    <a href="contacto.html"><button type="button" class="btn btn-outline-dark">CONTACTANOS</button></a>
-                </div>
-            </div>
-            <div>
-                <img src="imgFondo/personalizaImg.png" class="img-thumbnail" alt="jugador Kobe">
-            </div>
-        </div>
-    </section>
     <!--PIE DE PAGINA-->
     <footer>
-        <div class="piePagina">
-            <div>
-                <p>CLIENTES</p>
-                <ul class="piePagina-items">
-                    <li><a href="#">Ingresá</a></li>
-                    <li><a href="registrate.html">Registrate</a></li>
-                </ul>
+        <section>
+            <div class="footerHelp">
+                <div>
+                    <a href="ubicacion.html"><img src="imgRedes/marcador-de-posicion.png"></a>
+                    <h3>UBICACION</h3>
+                </div>
+                <div>
+                    <a href="preguntasFrecuentes.html"><img src="imgRedes/pregunta.png"></a>
+                    <h3>AYUDA</h3>
+                </div>
+                <div>
+                    <a href="contacto.html"><img src="imgRedes/portafolio.png"></a>
+                    <h3>TRABAJA CON NOSOTROS</h3>
+                </div>
+            </div>
+        </section>
+        <div>
+            <div class="sectionRedes">
+                <h3>SEGUINOS</h3>
+                <img src="imgRedes/logoFacebook.png" class="logoRedes">
+                <img src="imgRedes/instagram.png">
             </div>
             <div>
-                <p>INFORMACION</p>
-                <ul class="piePagina-items">
-                    <li><a href="#">Tabla de talles</a></li>
-                    <li><a href="#">Cómo comprar</a></li>
-                    <li><a href="envios.html">Envios</a></li>
-                    <li><a href="#">Políticas de cambio</a></li>
-                    <li><a href="preguntasFrecuentes.html">Preguntas frecuentes</a></li>
+                <ul class="footer_item">
+                    <a href="registrate.html"><li>REGISTRARSE</li></a>
+                    <a href="productos.html"><li>PRODUCTOS</li></a>
+                    <a href="ofertas.html"><li>OFERTAS</li></a>
+                    <a href="envios.html"><li>ENVIOS</li></a>
+                    <a href="preguntasFrecuentes.html"><li>PREGUNTAS FRECUENTES</li></a>
+                    <a href="contacto.html"><li>CONTACTO</li></a>
                 </ul>
-            </div>
-            <div>
-                <p>CONTACTO</p>
-                <ul class="piePagina-items">
-                    <li><a href="#">Trabajá con nosotros</a></li>
-                </ul>
-            </div>
-            <div>
-                <p>SEGUINOS</p>
-                <img src="imgRedes/logoFacebook.png" alt="logo facebook" class="imgRedes">
-                <img src="imgRedes/instagram.png" alt="logo instagram">
             </div>
         </div>
-        <hr>
-        <section>
-            <div class="padre">
-                <div>
-                    <p class="titleHelp">NECESITAS AYUDA</p>
-                </div>
-                <div class="hijo">
-                    <div>
-                        <a href="#"><p>Cómo realizar tu pedido</p></a>
-                    </div>
-                    <div>
-                        <a href="#"><p>Pagos y envíos</p></a>
-                    </div>
-                    <div>
-                        <a href="preguntasFrecuentes.html"><p>Preguntas frecuentes</p></a>
-                    </div>
-                </div>
-        </section>
     </footer>
     <!--BOOTSTRAP-->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
-|   <!--JAVASCRIPT-->
-    <script src="js/camiseta.js"></script>
-    <script src="js/globales.js"></script>
-    <script src="js/funcionesSelect.js"></script>
-    <script src="js/funcionesOfertas.js"></script>
-    <script src="js/main.js"></script>
+    <!--JAVASCRIPT-->
+
 </body>
 </html>

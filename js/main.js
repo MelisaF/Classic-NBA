@@ -1,16 +1,5 @@
 // METODO READY
 $(document).ready(function () {
-    console.log("Se cargó el DOM");
-    
-    //JQUERY Y SELECTORES
-    const botones = $('.btn-compra');
-    for (const boton of botones) {
-    boton.onclick = comprarCamiseta;
-    }
-    const botonesSale = $('.btn-compraSale');
-    for (const boton of botonesSale) {
-    boton.onclick = comprarSaleCamiseta;
-    }
     //OBTENER INFO EN STORAGE
     if("CARRITO" in localStorage) {
         const datosGuardados = JSON.parse(localStorage.getItem("CARRITO"));
@@ -19,13 +8,14 @@ $(document).ready(function () {
         }
         //SALIDA
         carritoUI(carrito);
+        $(".dropdown-menu").click(function (e) { 
+            e.stopPropagation();
+        });
     }
     
-    $(".dropdown-menu").click(function(e) {
-        e.stopPropagation();
-    });
 
-    //PETICIONES JQUERY
+    
+  //PETICIONES JQUERY
     const URLGET = "data/productos.json";
     $.get(URLGET, function (datos, estado) {
         if(estado == "success") {
@@ -33,11 +23,9 @@ $(document).ready(function () {
                 camisetas.push(new Camiseta(literal.img, literal.equipo, literal.nombre, literal.modelo, literal.precio, literal.cantidad,literal.id));
             }
         }
-        console.log(camisetas);
-                
         //GENERO INTERFAZ DE CAMISETAS
         camisetaJquery(camisetas, '#productoCamiseta');
-    });
+});
 
     const URLGET2 = "data/ofertas.json";
     $.get(URLGET2, function (datos, estado) {
@@ -48,46 +36,49 @@ $(document).ready(function () {
         }
         //GENERO INTERFAZ DE CAMISETAS
         camisetaJquery(saleCamisetas, '#productoSaleCamiseta');
-    });
+        });
 });
-//METODO LOAD
-window.addEventListener("load", ()=> {
+
+window.addEventListener('load', ()=> {
+    console.log("Imagenes cargadas");
     $("#indicadorCarga").remove();
     //ANIMACION
     $("#productoCamiseta").fadeIn("slow");
     $("#productoSaleCamiseta").fadeIn("slow");
-    
-});
+})
+
 //GENERAR SELECT
 selectProducto(equipos, "#filtroEquipos");
-//CHANGE PRODUCTOS
+//LUEGO ASOCIO EL EVENTO
 $("#filtroEquipos").change(function (e) { 
     e.preventDefault();
     const value = this.value;
     $("#productoCamiseta").fadeOut(600,function () {
-        if(value == "Todos") {
+        if(value == "TODOS") {
             camisetaJquery(camisetas, '#productoCamiseta');
         }
-        else if(value =='Miami' || value =='Memphis') {
+        else if(value =='MIAMI' || value =='MEMPHIS') {
             $("#filtroNoEncontrado").empty();
-            $("#filtroNoEncontrado").append(`<p class="textNoEncontrado">No se han encontrado resultados para la búsqueda<p><hr><p class="text-productoDisponible">Productos disponibles:</p>`);
+            $("#filtroNoEncontrado").append(`<p class="textNoEncontrado">NO SE HAN ENCONTRADO RESULTADOS PARA LA BUSQUEDA<p><hr><p class="text-productoDisponible">PRODUCTOS DISPONIBLES:</p>`);
         }
         
         else {
             $("#filtroNoEncontrado").remove();
             const filtrados = camisetas.filter(p => p.equipo == value);
             camisetaJquery(filtrados, '#productoCamiseta');
+            $("#filtroNoEncontrado").remove();
         }
+        //MOSTRAR UNA VEZ GENERADOS LOS PRODUCTOS
     }).fadeIn(600);
 });
 
-
-//EVENTO SOBRE INPUT DE BUSQUEDA PRODUCTOS
+//DEFINIR EVENTOS SOBRE EL INPUT DE BUSQUEDA
 $("#busquedaProducto").keydown(function (e) { 
-    const criterio = this.value;
+    const criterio = this.value.toUpperCase();
     if(criterio != "") {
-        const productoEncontrado = camisetas.filter(p => p.nombre.includes(criterio)||  p.modelo.includes(criterio) ||  p.equipo.includes(criterio));
-        console.log(productoEncontrado);
+        const productoEncontrado = camisetas.filter(p => p.nombre.includes(criterio.toUpperCase()) ||
+                                                    p.modelo.includes(criterio.toUpperCase()) || 
+                                                    p.equipo.includes(criterio.toUpperCase()));
         camisetaJquery(productoEncontrado,'#productoCamiseta');
     }
 });
@@ -99,7 +90,6 @@ $(".inputPrecio").change(function (e) {
     const max = $("#maxProducto").val();
     if((min > 0) && (max >0)) {
         const precioEncontrado = camisetas.filter(p => p.precio >= min && p.precio <= max);
-        console.log(precioEncontrado);
         camisetaJquery(precioEncontrado,'#productoCamiseta');
     }
     

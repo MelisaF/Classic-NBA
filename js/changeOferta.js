@@ -9,12 +9,12 @@ $("#filtroOfertaEquipos").change(function (e) {
     e.preventDefault();
     const value = this.value;
     $('#productoSaleCamiseta').fadeOut(600,function() {
-        if(value =="Todos") {
+        if(value =="TODOS") {
             camisetaJquery(saleCamisetas,'#productoSaleCamiseta');
         }
-        else if(value =='Miami' || value =='Memphis') {
+        else if(value =='MIAMI' || value =='MEMPHIS') {
             $("#filtroNoEncontrado").empty();
-            $("#filtroNoEncontrado").append(`<p class="textNoEncontrado">No se han encontrado resultados para la búsqueda</p><hr><p class="text-productoDisponible">Productos disponibles:</p>`);
+            $("#filtroNoEncontrado").append(`<p class="textNoEncontrado">NO SE HAN ENCONTRADO RESULTADOS PARA LA BUSQUEDA</p><hr><p class="text-productoDisponible">PRODUCTOS DISPONIBLES:</p>`);
         }
         
         else {
@@ -28,11 +28,13 @@ $("#filtroOfertaEquipos").change(function (e) {
 
 //EVENTO SOBRE INPUT DE BUSQUEDA OFERTAS
 $("#busquedaProducto").keydown(function (e) { 
-    const criterio = this.value;
+    const criterio = this.value.toUpperCase();
     if(criterio != "") {
-        const productoEncontrado = camisetas.filter(p => p.nombre.includes(criterio)||  p.modelo.includes(criterio) ||  p.equipo.includes(criterio));
+        const productoEncontrado = camisetas.filter(p => p.nombre.includes(criterio.toUpperCase()) ||
+                                                    p.modelo.includes(criterio.toUpperCase()) || 
+                                                    p.equipo.includes(criterio.toUpperCase()));
         console.log(productoEncontrado);
-        camisetaJquery(productoEncontrado,'#productoCamiseta');
+        camisetaJquery(productoEncontrado,'#productoSaleCamiseta');
     }
 });
 

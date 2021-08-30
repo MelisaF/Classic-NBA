@@ -5,7 +5,7 @@ function selectProducto(lista, selector) {
     lista.forEach(element => {
         $(selector).append(`<option value ='${element}'> ${element}</option>`);
     });
-    $(selector).prepend("<option value ='Todos'> Todos</option>");
+    $(selector).prepend("<option value ='TODOS'> TODOS</option>");
 }
 
 //FUNCION PARA GENERAR SELECT SECTION OFERTAS
@@ -15,5 +15,5 @@ function selectSaleProducto(listaSale, selectorSale) {
     listaSale.forEach(ele => {
         $(selectorSale).append(`<option value ='${ele}'> ${ele}</option>`);
     });
-    $(selectorSale).prepend("<option value ='Todos'> Todos</option>");
+    $(selectorSale).prepend("<option value ='TODOS'> TODOS</option>");
 }

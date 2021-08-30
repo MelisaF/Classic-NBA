@@ -8,3 +8,11 @@ class Contacto {
     }
 }
 
+class Usuario {
+    constructor(name, adress, email, password) {
+        this.name = name;
+        this.adress = adress;
+        this.email = email;
+        this.password = password;
+    }
+}

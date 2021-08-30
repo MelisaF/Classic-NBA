@@ -12,33 +12,46 @@
     <!--FONTS-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@100&display=swap" rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@200&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+    
     <!--ESTILOS CSS-->
     <link rel="stylesheet" href="estilos.css">
-
-    <title>CLASSIC NBA/REGISTRATE</title>
+    <title>CLASSIC NBA/ENVIOS</title>
 </head>
 <body>
     <!--MENU DE NAVEGACION-->
     <header>
-        <nav class="navbar navbar-light bg-light">
-            <a class="navbar-brand">CLASSIC NBA</a>
-            <form class="form-inline">
-                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-dark" type="submit">Buscar</button>
-            </form>
-        </nav>
-        <!--LISTA DE MENU-->
-        <div class="menu_list">
-            <ul class="menu_list--items">
-                <a href="index.html"><li>HOME</li></a>
-                <a href="productos.html"><li>PRODUCTOS</li></a>
-                <a href="ofertas.html"><li>OFERTAS</li></a>
-                <a href="contacto.html"><li>CONTACTO</li></a>
+        <p class="navText">ENVIO GRATIS DESDE $5000</p>
+    </header>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand fontTitle" href="index.html">Classic NBA</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-link" href="index.html">HOME</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="productos.html">PRODUCTOS<span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="ofertas.html">OFERTAS</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="contacto.html">CONTACTO</a>
+                </li>
             </ul>
         </div>
-    </header>
+        <form>
+            <input class="lupaBusca" type="text" id="header-search" placeholder="Buscar" name="s" autocomplete="off">
+            <img src="imgRedes/lupa.png" class="imgLupa">
+        </form>
+    </nav>
     <!--RUTA DE NAVEGACION-->
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
@@ -47,101 +60,77 @@
         </ol>
     </nav>
         <!--CUERPO-->
-        <div class="imgEquipo">
-            <img src="imgFondo/equipoText.png" class="img-fluid" alt="equipo de basketball">
-        </div>
         <div class="ingresaOregistarte">
             <div>
-                <h1 class="titleSesion">NUEVA CUENTA</h1>
+                <h1 class="titleCuenta">NUEVA CUENTA</h1>
                 <h2 class="titleRegistrados">INFORMACION PERSONAL</h2>
-                <form class="infoPersonal">
+                <form id="infoPersonal">
                     <div class="mb-3">
-                        <label for="name" class="form-label">Nombre</label>
-                        <input type="name" class="form-control" id="exampleInputName1" aria-describedby="emailHelp">
-                    </div>
-                    <div class="mb-3">
-                        <label for="exampleInputAdress1" class="form-label">Apellido</label>
-                        <input type="adress" class="form-control" id="exampleInputAdress1">
-                    </div>
-                </form>
-            </div>
-            <div>
-                <h3 class="titleNuevos">INFORMACION PARA INICIAR SESION</h3>
-                <form class="infoIniciar">
-                    <div class="mb-3">
-                        <label for="exampleInputEmail1" class="form-label">Correo Electrónico</label>
-                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                        <label for="name" class="form-label positionItem">Nombre</label>
+                        <input name="name"type="name" class="form-control inputsCollection" aria-describedby="emailHelp">
                     </div>
                     <div class="mb-3">
-                        <label for="exampleInputPassword1" class="form-label">Contraseña</label>
-                        <input type="password" class="form-control" id="exampleInputPassword1">
+                        <label for="exampleInputAdress1" class="form-label positionItem">Apellido</label>
+                        <input name="adress" type="adress" class="form-control inputsCollection" >
                     </div>
-                    <div class="mb-3">
-                        <label for="exampleInputPassword1" class="form-label">Confirmar contraseña</label>
-                        <input type="password" class="form-control" id="exampleInputPassword1">
-                    </div>
-                    <div id="btn_crearCuenta">
-                        <button type="submit" class="btn btn-outline-dark">Crear cuenta</button>
-                    </div>
+                    <div>
+                        <h3 class="titleNuevos">INFORMACION PARA INICIAR SESION</h3>
+                            <div class="mb-3">
+                                <label for="exampleInputEmail1" class="form-label positionItem">Correo Electrónico</label>
+                                <input name="email" type="email"  class="form-control inputsCollection" aria-describedby="emailHelp">
+                            </div>
+                            <div class="mb-3">
+                                <label for="exampleInputPassword1" class="form-label positionItem">Contraseña</label>
+                                <input name="password"type="password" class="form-control inputsCollection" autocomplete="cc-csc">
+                            </div>
+                            <div id="btn_crearCuenta">
+                                <button type="submit" class="btn btn-outline-dark inputsCollection">Crear cuenta</button>
+                            </div>
+                    </div>        
                 </form>
             </div>
         </div>
-    <!--PIE DE PAGINA-->
+        <!--PIE DE PAGINA-->
     <footer>
-        <div class="piePagina">
-            <div>
-                <p>CLIENTES</p>
-                <ul class="piePagina-items">
-                    <li><a href="#">Ingresá</a></li>
-                    <li><a href="registrate.html">Registrate</a></li>
-                </ul>
+        <section>
+            <div class="footerHelp">
+                <div>
+                    <a href="ubicacion.html"><img src="imgRedes/marcador-de-posicion.png"></a>
+                    <h3>UBICACION</h3>
+                </div>
+                <div>
+                    <a href="preguntasFrecuentes.html"><img src="imgRedes/pregunta.png"></a>
+                    <h3>AYUDA</h3>
+                </div>
+                <div>
+                    <a href="contacto.html"><img src="imgRedes/portafolio.png"></a>
+                    <h3>TRABAJA CON NOSOTROS</h3>
+                </div>
+            </div>
+        </section>
+        <div>
+            <div class="sectionRedes">
+                <h3>SEGUINOS</h3>
+                <img src="imgRedes/logoFacebook.png" class="logoRedes">
+                <img src="imgRedes/instagram.png">
             </div>
             <div>
-                <p>INFORMACION</p>
-                <ul class="piePagina-items">
-                    <li><a href="#">Tabla de talles</a></li>
-                    <li><a href="#">Cómo comprar</a></li>
-                    <li><a href="envios.html">Envios</a></li>
-                    <li><a href="#">Políticas de cambio</a></li>
-                    <li><a href="preguntasFrecuentes.html">Preguntas frecuentes</a></li>
+                <ul class="footer_item">
+                    <a href="registrate.html"><li>REGISTRARSE</li></a>
+                    <a href="productos.html"><li>PRODUCTOS</li></a>
+                    <a href="ofertas.html"><li>OFERTAS</li></a>
+                    <a href="envios.html"><li>ENVIOS</li></a>
+                    <a href="preguntasFrecuentes.html"><li>PREGUNTAS FRECUENTES</li></a>
+                    <a href="contacto.html"><li>CONTACTO</li></a>
                 </ul>
-            </div>
-            <div>
-                <p>CONTACTO</p>
-                <ul class="piePagina-items">
-                    <li><a href="#">Trabajá con nosotros</a></li>
-                </ul>
-            </div>
-            <div>
-                <p>SEGUINOS</p>
-                <img src="imgRedes/logoFacebook.png" alt="logo facebook" class="imgRedes">
-                <img src="imgRedes/instagram.png" alt="logo instagram">
             </div>
         </div>
-        <hr>
-        <section>
-            <div class="padre">
-                <div>
-                    <p class="titleHelp">NECESITAS AYUDA</p>
-                </div>
-                <div class="hijo">
-                    <div>
-                        <a href="#"><p>Cómo realizar tu pedido</p></a>
-                    </div>
-                    <div>
-                        <a href="#"><p>Pagos y envíos</p></a>
-                    </div>
-                    <div>
-                        <a href="preguntasFrecuentes.html"><p>Preguntas frecuentes</p></a>
-                    </div>
-                </div>
-        </section>
     </footer>
     <!--BOOTSTRAP-->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>  
     <!--JAVASCRIPT-->
     <script src="js/contacto.js"></script>
-    <script src="js/registrarse.js"></script>
+    <script src="js/registro.js"></script>
 </body>
 </html>

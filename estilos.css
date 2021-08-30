@@ -3,8 +3,11 @@
     padding: 0%;
 }
 body {
-    font-family: 'Barlow Condensed', sans-serif;
+    font-family: 'Urbanist', sans-serif;
     font-size: 1.5rem;
+}
+.fontTitle {
+    font-family: 'Dancing Script', cursive;
 }
 
 /* MENU DE NAVEGACION */
@@ -13,21 +16,31 @@ body {
     font-size: 3rem;
 }
 .bg-light {
-    background-image: linear-gradient(to right, rgb(58, 58, 189), rgb(196, 60, 60));
+    background-color: white!important;
 }
-
 .form-control {
     font-size: 2rem;
 }
-
+.menuItem {
+    margin-left: 30%;
+}
+.navText{
+    color:white;
+    font-size: 1rem;
+    text-align: center;
+    height: 15%;
+    background-color:#343a40!important;
+    width: 100%;
+    margin: 0%;
+    padding: 0%;
+    font-family: 'Urbanist', sans-serif;
+}
 .btn {
     font-size: 2rem;
 }
 
 /* MENU LIST */
-.menu_list {
-    background-image: linear-gradient(to right, rgb(58, 58, 189), rgb(196, 60, 60));
-}
+
 .menu_list--items {
     display: flex;
     align-items: center;
@@ -48,26 +61,14 @@ a{
     color:black;
 }
 
-
-/*TITLES */
-h1 {
-    margin-left: 30%;
-    font-weight: bold;
+.sectionRedes {
+    margin-bottom: 3%;
 }
-h2 {
-    margin: 5% 0% 5% 40%;
-    font-weight: bold;
+/*LOGO WHATSAPP*/
+.logoWhats {
+    margin-left: 93%;
+    position: fixed;
 }
-/*LOGO DE LOS EQUIPOS*/
-.logoEquipos {
-    display: flex;
-    list-style: none;
-}
-.imgEquipos {
-    width: 80%;
-    height: 80%;
-}
-
 /* SECTION PROMO*/
 .promo {
     background-image: url(imgFondo/fondoPromo.jpg);
@@ -92,11 +93,16 @@ h2 {
     margin-left: 45%;   
     font-weight: bolder;
 }
+.personaliza-item2 {
+    font-size: 2rem;
+    margin-left: 40%;
+    font-weight: bolder;
+}
 .img-thumbnail {
     border-style: none;
 }
 .btn_contactanos {
-    margin-left: 41%;
+    margin-left: 40%;
     margin-top: 10%;
 }
 /*IMAGENES RECOMENDADAS*/
@@ -106,7 +112,9 @@ h2 {
 }
 /* FOOTER */
 footer {
-    background: linear-gradient(to left, rgb(65, 65, 200), #C70039);
+    background: rgba(255, 255, 255, 0.849);
+    text-align: center;
+
 }
 .piePagina {
     display: grid;
@@ -129,15 +137,35 @@ footer {
 .imgRedes {
     margin-left: 40%;
 }
+.footer_item {
+    display: flex;
+    font-size: 1rem;
+    list-style: none;
+    justify-content: center;
+}
+.footer_item > a {
+    border-right: 1px solid #000;
+    padding: 0 20px;
+    margin-left: 7%;
+    font-weight: bolder;
+    text-decoration: none;
+}
+.footer_item > a :hover {
+    color: rgb(209, 27, 27);
+}
+.footerHelp {
+    background-color: #eee;
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+    margin-bottom: 5%;
+    padding: 0 20px;
+}
 
 p {
     font-weight: bolder;
-    margin-left: 39%;
     margin-top: 5%;
     color: black;
 }
-
-
 .titleHelp {
     margin-left: 45%;
 }
@@ -163,15 +191,13 @@ p {
 
 /*SECTION CONTACT*/
 
-.section_contact {
-    margin-left: 30%;
-}
-.titleSesion {
-    margin-left: 1%;
+.sesionTitle {
+    margin-left: 12%;
 }
 .areaText {
     width: 100%;
     height: 50%;
+    margin-left: 5%;
 }
 .carritoCompra {
     width: 4%;
@@ -229,10 +255,13 @@ ol {
         margin-left: 3%;
     }
     .promoItem {
-        margin-left: 60%;
+        margin-left: 65%;
+    }
+    .promoItem2 {
+        margin-left: 56%;
     }
     .promoBtn {
-        margin-left: 60%;
+        margin-left: 62%;
         margin-top: 3%;
     }
     .sectionRecomendados {
@@ -257,27 +286,26 @@ ol {
         height: 60%;
     }
     input {
-        width: 60%;
+        width: 90%;
+        margin-left: 5%;
     }
     .areaText {
-        width: 60%;
+        width: 90%;
     }
     .carritoCompra {
         width: 3%;
-    }
-    .btn-delete {
-        height: 20%;
     }
     #productoSaleCamiseta{ 
         margin-left: 5%;
     }
     #btnEnviarForm{
-        margin: 3% 0% 3% 50%;
+        margin: 5% 0% 0% 40%;
     }
-    .btn-registrarse {
-        margin-left: 30%;
-        margin-bottom: 5%;
+    .email-dress {
+        margin-left: 5%;
+        margin-top: 5%;
     }
+    
     .alignEnvios {
         margin-left: 0%;
         margin-top: 0%;
@@ -298,19 +326,26 @@ ol {
         grid-template-columns: 20% 80%;
     }
     .sectionSale {
-        background-image: url(imgFondo/sectionSale.png) ;
+        display: flex;
+        justify-content: center;
+        margin-top: 5%;
     }
     .sectionSale > h2 {
         font-weight: 900;
         font-size: 5rem;
         margin-bottom: 5%;
     }
-    .btn-oferta {
-        margin-left: 41%;
-        margin-bottom: 5%;
+    .sectionContacto {
+        display: grid;
+        grid-template-columns: 40% 60%;
     }
+    .section_contact > .titleSesion{
+        margin-left: 20%;
+    }
+    
     .titleOferta {
         margin-top: 5%;
+
     } 
     .textNoEncontrado{
         margin-left: 0%;
@@ -321,7 +356,73 @@ ol {
         margin-bottom: 5%;
     }
     .anchoPrecio {
-        width: 40%;
+        width: 45%;
+    }
+    .pieCenter {
+        justify-content: center;
+    }
+    .pieCenter > titlesPie {
+        margin-left: 0%;
+    }
+
+    .pieImg {
+        display: grid;
+        grid-template-columns: 33% 33% 33%;
+        margin-left: 20%;
+    }
+    .imgPie {
+        margin-left: 4%;
+        margin-bottom: 5%;
+    }
+    .imgPie2 {
+        margin-left: 12%;
+        margin-bottom: 5%;
+    }
+    .textConsultas {
+        margin-left: 10%;
+    }
+    .mailDress {
+        margin-left: 0%;
+    }
+    .masVendidas {
+        margin-left: 5%;
+    }
+    /*IMAGENES RECOMENDADAS*/
+    .sectionRecomendados_img {
+    display: flex;
+    justify-content: center;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    }
+    .imgCamisetas {
+        display: flex;
+        justify-content: center;
+    }
+    .imgCamisetas :hover {
+        zoom: 1.1;
+    }
+    .info__description > p {
+        margin-left: 10%;
+    }
+    .info__description > button {
+        margin-left: 10%;
+    }
+    .lupaBusca {
+        margin-left: 10%;
+        margin-top: 2%;
+        width: 70%;
+    }
+    .flex-icon {
+        display: flex;
+    }
+    .imgUsuario {
+        margin-top: 2%;
+    }
+    .titleRegistrados{
+    margin-bottom: 2%;
+    }
+    .titleNuevos {
+        margin-left: 12%;
     }
 }
 
@@ -347,14 +448,9 @@ input {
 }
 .card {
     border-color:transparent;
+    background-color: rgba(255, 255, 255, 0.904);
 }
-.camisetaSeleccionada {
-    display: grid;
-    grid-template-columns: 25% 25% 25% 25%;
-}
-.btn-delete {
-    height: 40%;
-}
+
 #pageFont {
     font-weight: bolder;
     color: black;
@@ -373,6 +469,7 @@ input {
 .imgEquipo {
     margin-left: 2%;
 }
+
 /*SECTION INICIAR SESION*/
 .titleSesion {
     font-weight: 900;
@@ -394,11 +491,20 @@ input {
 .ingresaOregistarte {
     display: grid;
     grid-template-columns: 50% 50%;
+
 }
 .titleRegistrados {
     font-size: 1.5rem;
     text-align: left;
-    margin-left: 10%;
+    margin-left: 13%;
+    margin-top: 7%;
+}
+.titleCuenta {
+    margin-left: 13%;
+    margin-top: 3%;
+}
+.positionItem {
+    margin-left: 5%;
 }
 .titleNuevos {
     font-size: 1.5rem;
@@ -408,5 +514,6 @@ input {
     margin-left: 0%;
 }
 #btn_crearCuenta {
-    margin-bottom: 5%;
+    margin-bottom: 10%;
+    margin-left: 33%;
 }

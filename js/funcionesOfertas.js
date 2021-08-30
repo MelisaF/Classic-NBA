@@ -8,45 +8,51 @@ function camisetaJquery(camisetas, id) {
                                 <h5 class="card-title">${camiseta.equipo}</h5>
                                 <p class="card-text">${camiseta.nombre}</p>
                                 <p class="card-text">$ ${camiseta.precio}</p>
-                                <a href="#" id="${camiseta.id}" class="btn btn-outline-dark btn-compraSale">Comprar</a>
+                                <a href="#" id="${camiseta.id}" class="btn btn-outline-dark btnCompraSale">COMPRAR</a>
                             </div>
                     </div>
                     <hr>`);
     }
     //EVENTO
-    $('.btn-compra').on("click", comprarSaleCamiseta);
+    $('.btnCompraSale').on("click", comprarSaleCamiseta);
 }
-
+//MANJADOR DE COMPRAR PRODUCTOS
 function comprarSaleCamiseta(e) {
+    //PREVENIR REFRESCO AL PRESIONAR ENLANCE
     e.preventDefault();
+    //OBTENER ID DEL BOTON PRESIONADO
     const saleCamisetaID = e.target.id;
+    //OBTENER OBJETO DEL PRODUCTO CORRESPONDIENTE AL ID
     const saleSeleccionado = saleCamisetas.find(p => p.id == saleCamisetaID);
     carrito.push(saleSeleccionado);
     //STORAGE
     localStorage.setItem("CARRITO", JSON.stringify(carrito));
+    //GENERAR SALIDA
     carritoUI(carrito);
 }
 
 function carritoUI(saleCamisetas){
+    //CAMBIAR INTERIOR DEL INDICADOR DE CANTIDAD
     $("#carritoCantidad").html(saleCamisetas.length);
+    //VACIAR EL INTERIOR DEL CARRITO
     $("#carritoProductos").empty();
     for (const saleCamiseta of saleCamisetas) {
         $("#carritoProductos").append(componenteCarrito(saleCamiseta));
     }
     //ASOCIACION DE EVENTOS
-    $('.btn-delete').on('click', eliminarCarrito)
+    $('.btn-delete').on('click', eliminarCarrito);
     
     $(".dropdown-menu").click(function(e) {
         e.stopPropagation();
     });
 }
-
+//FUNCION PARA GENERAR LA ESTRUCTURA DEL REGISTRO HTML
 function componenteCarrito(camiseta) {
-    return`<div class="camisetaSeleccionada">
+    return`<div>
                 <p >ID: ${camiseta.id}</p>
-                <p>Modelo:${camiseta.modelo}</p>
-                <span class="badge rounded-pill bg-secondary">$ ${camiseta.precio}</span>
-                <button id='${camiseta.id}' class="btn-delete">x</button>
+                <p>MODELO:${camiseta.modelo}</p>
+                <span>$ ${camiseta.precio}</span>
+                <a id='${camiseta.id}' class="btn btn-outline-dark btn-delete">x</a>
             </div>`;   
 }
 
@@ -55,22 +61,11 @@ function eliminarCarrito(e) {
     console.log(e.target.id);
     //FILTER DELETE
     let posicion = carrito.findIndex(producto => producto.id == e.target.id);
+    delete carrito[posicion];
     carrito.splice(posicion, 1);
     //ACTUALIZAR INTERFAZ
     carritoUI(carrito);
     //STORAGE
     localStorage.setItem("CARRITO", JSON.stringify(carrito));
 }
-
-//ANIMATE
-const timeAnime = 1000;
-
-$("#titleOferta").animate( {
-    opacity: 0.4,
-    fontWeight: 900
-}, timeAnime, function() {
-    this.innerHTML = "HAZ CLICK AQUI ABAJO";
-})
-    .delay(2000)
-        .slideUp();
 
