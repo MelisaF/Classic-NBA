@@ -8,10 +8,11 @@ $(document).ready(function () {
         }
         //SALIDA
         carritoUI(carrito);
-        $(".dropdown-menu").click(function (e) { 
-            e.stopPropagation();
-        });
     }
+        $(".dropdown-menu").click(function (e) { 
+        e.stopPropagation();
+    });
+});
     
 
     
@@ -25,7 +26,7 @@ $(document).ready(function () {
         }
         //GENERO INTERFAZ DE CAMISETAS
         camisetaJquery(camisetas, '#productoCamiseta');
-});
+    });
 
     const URLGET2 = "data/ofertas.json";
     $.get(URLGET2, function (datos, estado) {
@@ -37,7 +38,7 @@ $(document).ready(function () {
         //GENERO INTERFAZ DE CAMISETAS
         camisetaJquery(saleCamisetas, '#productoSaleCamiseta');
         });
-});
+
 
 window.addEventListener('load', ()=> {
     console.log("Imagenes cargadas");

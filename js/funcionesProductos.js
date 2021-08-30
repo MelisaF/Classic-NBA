@@ -14,7 +14,6 @@ function camisetaJquery (camisetas,id) {
                     <hr>`);
     }
     //EVENTO
-    $('.btnCompra').on("click", comprarCamiseta);
 }
 
 //MANEJADOR DE COMPRAR DE PRODUCTOS
@@ -25,6 +24,7 @@ function comprarCamiseta(e) {
     const camisetaID = e.target.id;
     //OBTENER OBJETO DEL PRODUCTO CORRESPONDIENTE AL ID
     const seleccionado = camisetas.find(p => p.id == camisetaID);
+    
     carrito.push(seleccionado);
     //STORAGE
     localStorage.setItem("CARRITO", JSON.stringify(carrito));
