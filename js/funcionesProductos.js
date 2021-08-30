@@ -14,6 +14,10 @@ function camisetaJquery (camisetas,id) {
                     <hr>`);
     }
     //EVENTO
+    $('.btnCompra').on("click", comprarCamiseta);
+    $(".dropdown-menu").click(function(e) {
+        e.stopPropagation();
+    });
 }
 
 //MANEJADOR DE COMPRAR DE PRODUCTOS
