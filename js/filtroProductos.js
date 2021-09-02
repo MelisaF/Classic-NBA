@@ -24,13 +24,13 @@ $("#filtroEquipos").change(function (e) {
         else if(value =='MIAMI' || value =='MEMPHIS') {
             $("#filtroNoEncontrado").empty();
             $("#filtroNoEncontrado").append(`<p class="textNoEncontrado">NO SE HAN ENCONTRADO RESULTADOS PARA LA BUSQUEDA<p><hr><p class="text-productoDisponible">PRODUCTOS DISPONIBLES:</p>`);
+            $("#filtroNoEncontrado").fadeOut(3000);
         }
         
         else {
             $("#filtroNoEncontrado").remove();
             const filtrados = camisetas.filter(p => p.equipo == value);
             camisetaJquery(filtrados, '#productoCamiseta');
-            $("#filtroNoEncontrado").remove();
         }
         //MOSTRAR UNA VEZ GENERADOS LOS PRODUCTOS
     }).fadeIn(600);
