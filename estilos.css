@@ -424,6 +424,13 @@ ol {
     .titleNuevos {
         margin-left: 12%;
     }
+    .dropdown {
+        margin-left: 10%;
+    }
+    .btnBackground{
+        width: 80%;
+    }
+    
 }
 
 /*ESTILOS INNER HTML*/

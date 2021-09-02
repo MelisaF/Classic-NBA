@@ -1,30 +1,41 @@
 //INTERFAZ
-camisetaJquery(saleCamisetas,'#productoSaleCamiseta');
-
+camisetaJquery(camisetas,'#productoCamiseta');
 //GENERAR SELECT
-selectSaleProducto(equipos, "#filtroOfertaEquipos");
+selectProducto(equipos, "#filtroEquipos");
+
+//FUNCION PARA GENERAR SELECT
+function selectProducto(lista, selector) {
+    $(selector).empty();
+    //RECORRER LISTA
+    lista.forEach(element => {
+        $(selector).append(`<option value ='${element}'> ${element}</option>`);
+    });
+        $(selector).prepend(`<option value ='TODOS'> TODOS</option>`);
+}
 
 //ASOCIO EL EVENTO
-$("#filtroOfertaEquipos").change(function (e) { 
+$("#filtroEquipos").change(function (e) { 
     e.preventDefault();
     const value = this.value;
-    $('#productoSaleCamiseta').fadeOut(600,function() {
-        if(value =="TODOS") {
-            camisetaJquery(saleCamisetas,'#productoSaleCamiseta');
+    $("#productoCamiseta").fadeOut(600,function () {
+        if(value === 'TODOS') {
+            camisetaJquery(camisetas, '#productoCamiseta');
         }
         else if(value =='MIAMI' || value =='MEMPHIS') {
             $("#filtroNoEncontrado").empty();
-            $("#filtroNoEncontrado").append(`<p class="textNoEncontrado">NO SE HAN ENCONTRADO RESULTADOS PARA LA BUSQUEDA</p><hr><p class="text-productoDisponible">PRODUCTOS DISPONIBLES:</p>`);
+            $("#filtroNoEncontrado").append(`<p class="textNoEncontrado">NO SE HAN ENCONTRADO RESULTADOS PARA LA BUSQUEDA<p><hr><p class="text-productoDisponible">PRODUCTOS DISPONIBLES:</p>`);
         }
         
         else {
             $("#filtroNoEncontrado").remove();
             const filtrados = camisetas.filter(p => p.equipo == value);
             camisetaJquery(filtrados, '#productoCamiseta');
+            $("#filtroNoEncontrado").remove();
         }
+        //MOSTRAR UNA VEZ GENERADOS LOS PRODUCTOS
     }).fadeIn(600);
-    
 });
+
 
 //EVENTO SOBRE INPUT DE BUSQUEDA OFERTAS
 $("#busquedaProducto").keydown(function (e) { 
@@ -34,7 +45,7 @@ $("#busquedaProducto").keydown(function (e) {
                                                     p.modelo.includes(criterio.toUpperCase()) || 
                                                     p.equipo.includes(criterio.toUpperCase()));
         console.log(productoEncontrado);
-        camisetaJquery(productoEncontrado,'#productoSaleCamiseta');
+        camisetaJquery(productoEncontrado,'#productoCamiseta');
     }
 });
 
@@ -46,7 +57,7 @@ $(".inputPrecio").change(function (e) {
     if((min > 0) && (max >0)) {
         const precioEncontrado = camisetas.filter(p => p.precio >= min && p.precio <= max);
         console.log(precioEncontrado);
-        camisetaJquery(precioEncontrado,'#productoSaleCamiseta');
+        camisetaJquery(precioEncontrado,'#productoCamiseta');
     }
     
 });

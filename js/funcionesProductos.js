@@ -1,5 +1,5 @@
-//FUNCION PARA GENERAR LA INTERFAZ DE PRODUCTOS CN JQUERY
-function camisetaJquery (camisetas,id) { 
+//SECTOR SALE
+function camisetaJquery(camisetas, id) {
     $(id).empty();
     for (const camiseta of camisetas) {
         $(id).append(`<div class="card" style="width: 18rem;">
@@ -15,20 +15,19 @@ function camisetaJquery (camisetas,id) {
     }
     //EVENTO
     $('.btnCompra').on("click", comprarCamiseta);
-    $(".dropdown-menu").click(function(e) {
-        e.stopPropagation();
-    });
 }
-
-//MANEJADOR DE COMPRAR DE PRODUCTOS
+//MANJADOR DE COMPRAR PRODUCTOS
 function comprarCamiseta(e) {
-    //PREVENIR REFRESCO AL PRESIONAR ENLACES
+    //PREVENIR REFRESCO AL PRESIONAR ENLANCE
     e.preventDefault();
+    Swal.fire({
+        title: 'Se ha añadido al carrito'
+    });
+
     //OBTENER ID DEL BOTON PRESIONADO
     const camisetaID = e.target.id;
     //OBTENER OBJETO DEL PRODUCTO CORRESPONDIENTE AL ID
     const seleccionado = camisetas.find(p => p.id == camisetaID);
-    
     carrito.push(seleccionado);
     //STORAGE
     localStorage.setItem("CARRITO", JSON.stringify(carrito));
@@ -36,17 +35,18 @@ function comprarCamiseta(e) {
     carritoUI(carrito);
 }
 
-//FUNCION PARA RENDERIZAR LA INTERFAZ DEL CARRITO
 function carritoUI(camisetas){
     //CAMBIAR INTERIOR DEL INDICADOR DE CANTIDAD
     $("#carritoCantidad").html(camisetas.length);
-    //VACIAR EL INTERIOR EL CARRITO
+    //VACIAR EL INTERIOR DEL CARRITO
     $("#carritoProductos").empty();
     for (const camiseta of camisetas) {
         $("#carritoProductos").append(componenteCarrito(camiseta));
     }
+    //AGREGAR TOTAL
+    $('#carritoProductos').append(`<p id="totalCarrito">TOTAL $${totalCarrito(camisetas)}</p>`)
     //ASOCIACION DE EVENTOS
-    $('.btn-delete').on('click', eliminarCarrito); 
+    $('.btn-delete').on('click', eliminarCarrito);
 
     $(".dropdown-menu").click(function(e) {
         e.stopPropagation();
@@ -55,17 +55,18 @@ function carritoUI(camisetas){
 //FUNCION PARA GENERAR LA ESTRUCTURA DEL REGISTRO HTML
 function componenteCarrito(camiseta) {
     return`<div>
-                <p >ID: ${camiseta.id}</p>
-                <p>MODELO:${camiseta.modelo}</p>
-                <span>$ ${camiseta.precio}</span>
-                <a id="${camiseta.id}" class= "btn btn-outline-dark btn-delete">x<a>
-            </div>`;   
+                <p> MODELO:${camiseta.modelo}
+                    <span>$ ${camiseta.precio}</span>
+                    <span> ${camiseta.cantidad} u.</span>
+                    <span>$ ${camiseta.subtotal()}</span>
+                    <a id='${camiseta.id}' class="btn btn-outline-dark btn-delete">x</a>
+                </p>
+            </div`;   
 }
-
 
 //FUNCTION DELETE
 function eliminarCarrito(e) {
-    e.preventDefault();
+    console.log(e.target.id);
     //FILTER DELETE
     let posicion = carrito.findIndex(producto => producto.id == e.target.id);
     delete carrito[posicion];
@@ -75,6 +76,34 @@ function eliminarCarrito(e) {
     //STORAGE
     localStorage.setItem("CARRITO", JSON.stringify(carrito));
 }
-
-
-
+//AGREGAR CANTIDAD
+function addCantidad() {
+    let camiseta = carrito.find(p => p.id == this.id);
+    camiseta.agregarCantidad(1);
+    $(this).parent().children()[1].innerHTML = camiseta.cantidad;
+    $(this).parent().children()[2].innerHTML = camiseta.subtotal();
+    //MODIFICAR TOTAL
+    $('#totalCarrito').html(`TOTAL ${totalCarrito(camisetas)}`);
+    //GUARDAR EN STORAGE
+    localStorage.setItem("CARRITO", JSON.stringify(carrito));
+}
+//RESTAR CANTIDAD
+function subCantidad() {
+    let camiseta = carrito.find(p => p.id == this.id);
+    if(camiseta.cantidad > 1) {
+        camiseta.agregarCantidad(-1);
+        let registroUI = $(this).parent().children();
+        registroUI[1].innerHTML = camiseta.cantidad;
+        registroUI[2].innerHTML = camiseta.subtotal();
+        //MODIFICAR TOTAL
+        $('#totalCarrito').html(`TOTAL ${totalCarrito(camisetas)}`);
+        //GUARDAR EN STORAGE
+        localStorage.setItem("CARRITO", JSON.stringify(carrito));
+    }
+}
+//FUNCION PARA OBTENER EL PRECIO TOTAL DEL CARRITO
+function totalCarrito (carrito) {
+    let total = 0;
+    carrito.forEach(p => total += p.subtotal ());
+    return total;  
+}
