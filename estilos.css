@@ -69,6 +69,7 @@ a{
     margin-left: 93%;
     position: fixed;
 }
+
 /* SECTION PROMO*/
 .promo {
     background-image: url(imgFondo/fondoPromo.jpg);
@@ -99,7 +100,7 @@ a{
     font-weight: bolder;
 }
 .img-thumbnail {
-    border-style: none;
+    border-style: none;   
 }
 .btn_contactanos {
     margin-left: 40%;
@@ -430,6 +431,13 @@ ol {
     .btnBackground{
         width: 80%;
     }
+    .btnProductos {
+        text-align: center;
+        margin-top: 2%;
+    }
+    .carritoComponente {
+        font-size: 0.7rem;
+    }
     
 }
 
@@ -448,8 +456,6 @@ ol {
 input {
     margin-bottom: 3%;
 }
-
-
 .card-text {
     margin-left: 0%;
 }

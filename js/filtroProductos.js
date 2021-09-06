@@ -18,17 +18,10 @@ $("#filtroEquipos").change(function (e) {
     e.preventDefault();
     const value = this.value;
     $("#productoCamiseta").fadeOut(600,function () {
-        if(value === 'TODOS') {
+        if(value == 'TODOS') {
             camisetaJquery(camisetas, '#productoCamiseta');
         }
-        else if(value =='MIAMI' || value =='MEMPHIS') {
-            $("#filtroNoEncontrado").empty();
-            $("#filtroNoEncontrado").append(`<p class="textNoEncontrado">NO SE HAN ENCONTRADO RESULTADOS PARA LA BUSQUEDA<p><hr><p class="text-productoDisponible">PRODUCTOS DISPONIBLES:</p>`);
-            $("#filtroNoEncontrado").fadeOut(3000);
-        }
-        
         else {
-            $("#filtroNoEncontrado").remove();
             const filtrados = camisetas.filter(p => p.equipo == value);
             camisetaJquery(filtrados, '#productoCamiseta');
         }

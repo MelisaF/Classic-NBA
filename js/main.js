@@ -10,8 +10,9 @@ $(document).ready(function () {
         carritoUI(carrito);
     }
         $(".dropdown-menu").click(function (e) { 
-        e.stopPropagation();
-    });
+            e.preventDefault();
+            e.stopPropagation();
+        });
 });
     
   //PETICIONES JQUERY
@@ -33,3 +34,9 @@ window.addEventListener('load', ()=> {
     //ANIMACION
     $("#productoCamiseta").fadeIn("slow");
 })
+
+
+const botones = $('.btnCompra');
+for (const boton of botones) {
+    boton.onclick = comprarCamiseta();
+}

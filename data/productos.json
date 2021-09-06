@@ -1,13 +1,110 @@
-[{"img": "imgCamisetas/atlanta11.jpg", "equipo": "ATLANTA", "nombre": "HAWKS TRAE YOUNG", "modelo":"NIKE RED 2019/20 SWINGMAN JERSEY", "precio": 1888, "cantidad":1, "id":1},
-{"img":"imgCamisetas/celticsBird.webp", "equipo":"CELTICS", "nombre":"LARRY BIRD MITCHELL & NESS KELLY","modelo": "GREEN HARDWOOD CLASSICS","precio": 1999, "cantidad":1,"id":2},
-{"img": "imgCamisetas/bulls24.jpg", "equipo":"CHICAGO BULLS", "nombre":"LAURI MARKKANEN", "modelo":"NIKE RED SWINGMAN JERSEY - ICON EDITION","precio": 1788,"cantidad":1, "id":3},
-{"img":"imgCamisetas/lakers23.webp", "equipo":"LAKERS", "nombre":"LEBRON JAMES", "modelo":"NKE GOLD 2020/21 SWINGMAN JERSEY", "precio":1999, "cantidad":1, "id": 4},
-{"img":"imgCamisetas/lakersNegra.webp","equipo": "LAKERS", "nombre":"LEBRON JAMES", "modelo":"NIKE BLACK CITY EDITION SWINGMAN JERSEY", "precio":2333,"cantidad":1,"id": 5},
-{"img":"imgCamisetas/milwaukeeAllen.webp","equipo":"MILWAUKEE BUCKS", "nombre":"ALLEN MITCHELL ", "modelo":"BLACK HARDWOOD CLASSICS SWINGMAN JERSEY", "precio":2899, "cantidad":1, "id": 6},
-{"img":"imgCamisetas/memphisSale.webp", "equipo": "MEMPHIS", "nombre":"MORAT", "modelo":"NIKE BLUE TEAM SWINGMAN JERSEY","precio": 1433, "cantidad": 1, "id": 7},
-{"img":"imgCamisetas/miamiSale.webp", "equipo":"MIAMI", "nombre":"JIMMY BUTLER",  "modelo":"NIKE BLACK SWINGMANN JERSEY", "precio":1255,"cantidad": 1, "id": 8 },
-{"img": "imgCamisetas/pippenSale.webp", "equipo":"CHICAGO BULLS", "nombre": "PIPPEN MITCHELL", "modelo": "WHITE 1995-96 HARDWOOD CLASSIC RELOAD SWINGMANN JERSEY", "precio":1255, "cantidad": 1,"id": 9},
-{"img":"imgCamisetas/celticsSale.webp", "equipo":"CELTICS", "nombre":"LARRY BIRD MITCHELL",  "modelo":"GREEN HARDWOOD CLASSIC WILDLIFE SWINGMANN JERSEY", "precio":1111,"cantidad":1, "id": 10},
-{"img": "imgCamisetas/atlantaSale.webp","equipo": "ATLANTA", "nombre":"YOUR NAME",  "modelo":"NIKE BLACK SWINGMANN CUSTOM JERSEY", "precio":1222,"cantidad": 1,"id": 11},
-{"img":"imgCamisetas/milwaukeeSale.webp","equipo": "MILWAUKEE BUCKS", "nombre":"YOUR NAME",  "modelo":"NIKE BLACK SWINGMANN JERSEY", "precio": 1111,"cantidad": 1, "id": 12}]
+[
+    {
+        "img": "imgCamisetas/atlanta11.jpg",
+        "equipo": "ATLANTA",
+        "nombre": "HAWKS TRAE YOUNG",
+        "modelo":"NIKE RED 2019/20",
+        "precio": 1888,
+        "cantidad":1, 
+        "id":1
+    },
+    {   
+        "img":"imgCamisetas/celticsBird.webp", 
+        "equipo":"CELTICS", 
+        "nombre":"LARRY BIRD MITCHELL & NESS KELLY",
+        "modelo": "GREEN HARDWOOD CLASSICS",
+        "precio": 1999, 
+        "cantidad":1,
+        "id":2
+    },
+    {   
+        "img": "imgCamisetas/bulls24.jpg", 
+        "equipo":"CHICAGO BULLS", 
+        "nombre":"LAURI MARKKANEN", 
+        "modelo":"NIKE RED - ICON EDITION",
+        "precio": 1788,
+        "cantidad":1, 
+        "id":3
+    },
+    {   
+        "img":"imgCamisetas/lakers23.webp", 
+        "equipo":"LAKERS", 
+        "nombre":"LEBRON JAMES", 
+        "modelo":"NKE GOLD 2020/21", 
+        "precio":1999, 
+        "cantidad":1, 
+        "id": 4
+    },
+    {   
+        "img":"imgCamisetas/lakersNegra.webp",
+        "equipo": "LAKERS", 
+        "nombre":"LEBRON JAMES", 
+        "modelo":"NIKE BLACK CITY EDITION", 
+        "precio":2333,
+        "cantidad":1,
+        "id": 5
+    },
+    {
+        "img":"imgCamisetas/milwaukeeAllen.webp",
+        "equipo":"MILWAUKEE BUCKS", 
+        "nombre":"ALLEN MITCHELL ", 
+        "modelo":"BLACK HARDWOOD CLASSICS", 
+        "precio":2899, 
+        "cantidad":1, 
+        "id": 6
+    },
+    {   
+        "img":"imgCamisetas/memphisSale.webp", 
+        "equipo": "MEMPHIS", 
+        "nombre":"MORAT", 
+        "modelo":"NIKE BLUE TEAM",
+        "precio": 1433, 
+        "cantidad": 1, 
+        "id": 7
+    },
+    {   
+        "img":"imgCamisetas/miamiSale.webp", 
+        "equipo":"MIAMI", 
+        "nombre":"JIMMY BUTLER", 
+        "modelo":"NIKE BLACK", 
+        "precio":1255,
+        "cantidad": 1, 
+        "id": 8 
+    },
+    {   "img": "imgCamisetas/pippenSale.webp", 
+        "equipo":"CHICAGO BULLS", 
+        "nombre": "PIPPEN MITCHELL", 
+        "modelo": "WHITE 1995-96 HARDWOOD CLASSIC RELOAD", 
+        "precio":1255, 
+        "cantidad": 1,
+        "id": 9
+    },
+    {   
+        "img":"imgCamisetas/celticsSale.webp", 
+        "equipo":"CELTICS", 
+        "nombre":"LARRY BIRD MITCHELL",  
+        "modelo":"GREEN HARDWOOD CLASSIC WILDLIFE", 
+        "precio":1111,
+        "cantidad":1, 
+        "id": 10
+    }, 
+    {   
+        "img": "imgCamisetas/atlantaSale.webp",
+        "equipo": "ATLANTA", 
+        "nombre":"YOUR NAME",  
+        "modelo":"NIKE BLACK CUSTOM", 
+        "precio":1222,
+        "cantidad": 1,
+        "id": 11
+    },
+    {   
+        "img":"imgCamisetas/milwaukeeSale.webp",
+        "equipo": "MILWAUKEE BUCKS", 
+        "nombre":"YOUR NAME", 
+        "modelo":"NIKE BLACK", 
+        "precio": 1111,
+        "cantidad": 1,
+        "id": 12
+    }
+]
 
